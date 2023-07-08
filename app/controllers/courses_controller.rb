@@ -26,13 +26,13 @@ class CoursesController < ApplicationController
 
   def course_params
     # Permit only the required parameters for the course
-    params.require(:course).permit(:name)
+    params.require(:course).permit(:name,:difficulty,:duration,:cost)
   end
 
   def create_tutors(tutor_params)
     tutor_params.each do |tutor_param|
       # Create each tutor for the course using the provided tutor parameters
-      @course.tutors.create(tutor_param.permit(:name))
+      @course.tutors.create(tutor_param.permit(:name,:age,:gender,:experience))
     end
   end
 end
