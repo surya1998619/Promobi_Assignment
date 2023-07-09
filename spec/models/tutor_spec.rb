@@ -12,6 +12,11 @@ RSpec.describe Tutor, type: :model do
       subject.name = nil
       expect(subject).to_not be_valid
     end
+
+    it 'is not valid when length of name is less than 3' do
+      subject.name = "ab"
+      expect(subject).to_not be_valid
+    end
   end
 
   describe "associations" do

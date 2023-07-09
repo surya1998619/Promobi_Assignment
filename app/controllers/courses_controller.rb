@@ -30,7 +30,7 @@ class CoursesController < ApplicationController
   end
 
   def create_tutors(tutor_params)
-    tutor_params.each do |tutor_param|
+    tutor_params&.each do |tutor_param|
       # Create each tutor for the course using the provided tutor parameters
       @course.tutors.create(tutor_param.permit(:name,:age,:gender,:experience))
     end
