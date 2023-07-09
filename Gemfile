@@ -70,6 +70,10 @@ group :test do
   gem 'rails-controller-testing', '~> 1.0', '>= 1.0.5'
   gem 'rspec-collection_matchers', '~> 1.2'
   gem "capybara"
+  gem 'shoulda-matchers'
+  gem "factory_bot_rails"
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "factory_bot", "~> 6.2"
